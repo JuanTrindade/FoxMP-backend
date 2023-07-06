@@ -9,5 +9,15 @@ module.exports = {
         } catch (error) {
             return res.status(500).send(error);
         }
+    },
+
+    async store(req, res){
+        try {
+            const user = await User.create(req.body);
+            return res.status(201).send(user);
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 }

@@ -7,5 +7,6 @@ routes.get('/', (req, res) => {
     return res.status(200).json({ message: 'Hello World' })
 });
 routes.get('/users', usercontroller.index);
+routes.post('/create', usercontroller.store)
 
 module.exports = routes;
